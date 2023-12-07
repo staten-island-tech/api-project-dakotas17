@@ -1,23 +1,4 @@
-/* //go get data
-//show data
-
-function greet(name){
-    const greetPromise = new Promise(function(resolve, reject){
-        resolve(`Hello ${name}`);
-    });
-    return greetPromise;
-}
-const Aaron = greet("Aaron");
-console.log(Aaron);
-//handle the promise
-Aaron.then((result)=>{
-    console.log(result);
-}); 
-REST API
-*/
-const URL =`https://api.quotable.io/random`;
-console.log(URL)
-
+const URL ='https://adresse.data.gouv.fr/api-doc/adresse';
 async function getData(URL){
     try {
         const response = await fetch(URL);
