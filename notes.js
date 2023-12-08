@@ -34,3 +34,13 @@ async function getData(URL){
     }
 }
 getData(URL)
+
+
+
+async function getData() {
+    let res = await fetch("https:");
+    let data = await res.json();
+    console.log(data);
+    data.results.forEach((movie) => console.log(movie));
+}
+getData();
