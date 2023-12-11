@@ -17,9 +17,9 @@ async function getData(URL){
 getData(URL) */
 
 async function getData() {
-    let res = await fetch("https://api-adresse.data.gouv.fr/search/?q=paris");
+    let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=14");
     let data = await res.json();
     console.log(data);
-   // data.results.forEach((movie) => console.log(movie));
+   data.results.forEach((data) => console.log(data));
 }
 getData();
