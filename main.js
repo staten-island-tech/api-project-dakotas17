@@ -17,9 +17,15 @@ async function getData(URL){
 getData(URL) */
 
 async function getData() {
-    let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=14");
+    let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=52");
     let data = await res.json();
-    console.log(data);
-   data.results.forEach((data) => console.log(data));
+    console.log(data.cards);
+   data.cards.forEach((data) => console.log(data));
 }
 getData();
+
+let dakota = {
+    name:"Dakota",
+    age:15
+}
+console.log(dakota.name)
