@@ -30,7 +30,11 @@ let dennis = {
 }
 console.log(dennis.name)
 
-let x = Array.from(dennis.name);
+
+
+
+
+/* let x = Array.from(dennis.name);
 console.log(x);
 for(let i = 0; i< dennis.name.length; i++){
     console.log(dennis.nam[i]);
@@ -72,4 +76,4 @@ function removeL(name) {
     x.splice(-1);
     console.log(x);
 }
-removeL(dennis.name)
+removeL(dennis.name) */

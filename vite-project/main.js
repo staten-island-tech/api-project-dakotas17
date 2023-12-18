@@ -41,11 +41,12 @@ async function getData(URL){
     }
 }
 getData(URL) */
-
+let deck = []
 async function getData() {
-  let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=14");
-  let data = await res.json();
-  console.log(data);
- data.results.forEach((data) => console.log(data));
+  let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=52");
+    let data = await res.json();
+
+  data.cards.forEach((card)=> deck.push(card))
 }
 getData();
+console.log(deck)
