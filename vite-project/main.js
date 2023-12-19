@@ -3,6 +3,14 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+const DOMselectors = {
+  form: document.querySelector("#form"),
+  name: document.querySelector(".name"),
+  h1s: document.querySelectorAll("h1"),
+};
+
+
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -24,29 +32,27 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 
 
-/* const URL ='https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port';
-async function getData(URL){
-    try {
-        const response = await fetch(URL);
-        if(response.status != 200){
-            throw new Error(response.statusText);
-        }
-        console.log(response);
-        const data = await response.json();
-        console.log(data);
-        document.querySelector("h1").textContent = data.content;
-        document.querySelector("h2").textContent = data.author;
-    } catch (error) {
-        document.querySelector("h1").textContent = `couldnt find ${pokemon}`;
-    }
-}
-getData(URL) */
+
 let deck = []
 async function getData() {
-  let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=52");
+  let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=3");
     let data = await res.json();
 
   data.cards.forEach((card)=> deck.push(card))
 }
 getData();
 console.log(deck)
+
+//shuffle out three cards, show user cards, flip and shuffle them, have user pick the "any number shown" with cards face down
+
+function greet(name){
+  const greetPromise = new Promise(function(resolve, reject){
+      resolve(`Hello ${name}`);
+  });
+  return greetPromise;
+}
+const Aaron = greet("aaron");
+console.log(Aaron);
+Aaron.then((result)=>{
+  console.log(result);
+}); 
