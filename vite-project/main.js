@@ -9,7 +9,25 @@ const DOMselectors = {
   h1s: document.querySelectorAll("h1"),
 };
 
+DOMselectors.form.addEventListener("submit", function(event){
+  event.preventDefault();
+  console.log(DOMselectors.name.value);
+  DOMselectors.h1s.forEach((el)=> el.textContent = DOMselectors.name.value)
 
+
+
+function holder(){
+  DOMselectors.containers.insertAdjacentHTML("afterbegin",
+  `<div class="section>
+    <h1> ${DOMselectors.name.value}</h1>
+    </div>`)}
+clearfields();
+});
+
+
+function clearfields() {
+  DOMselectors.name.value ="";
+}
 
 document.querySelector('#app').innerHTML = `
   <div>
