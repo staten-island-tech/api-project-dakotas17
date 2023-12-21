@@ -17,10 +17,11 @@ DOMselectors.form.addEventListener("submit", function(event){
 
 
 function holder(){
-  DOMselectors.containers.insertAdjacentHTML("afterbegin",
-  `<div class="section>
+  DOMselectors.containers.insertAdjacentHTML(
+  `<div class="section">
     <h1> ${DOMselectors.name.value}</h1>
     </div>`)}
+holder()
 clearfields();
 });
 
