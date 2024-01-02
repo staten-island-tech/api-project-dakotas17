@@ -8,22 +8,22 @@ const DOMselectors = {
   name: document.querySelector(".name"),
   h1s: document.querySelectorAll("h1"),
 };
-
+/* 
 DOMselectors.form.addEventListener("submit", function(event){
   event.preventDefault();
   console.log(DOMselectors.name.value);
   DOMselectors.h1s.forEach((el)=> el.textContent = DOMselectors.name.value)
+ */
 
 
-
-function holder(){
+/* function holder(){
   DOMselectors.containers.insertAdjacentHTML(
   `<div class="section">
     <h1> ${DOMselectors.name.value}</h1>
     </div>`)}
 holder()
 clearfields();
-});
+}); */
 
 
 function clearfields() {
@@ -38,13 +38,9 @@ document.querySelector('#app').innerHTML = `
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
-    <h1>Hello Vite!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
   </div>
 `
 
@@ -63,6 +59,10 @@ getData();
 console.log(deck)
 
 //shuffle out three cards, show user cards, flip and shuffle them, have user pick the "any number shown" with cards face down
+
+
+
+
 
 function greet(name){
   const greetPromise = new Promise(function(resolve, reject){
