@@ -16,55 +16,24 @@ DOMselectors.form.addEventListener("submit", function(event){
  */
 
 
-/* function holder(){
-  DOMselectors.containers.insertAdjacentHTML(
-  `<div class="section">
-    <h1> ${DOMselectors.name.value}</h1>
-    </div>`)}
-holder()
-clearfields();
-}); */
-
-
 function clearfields() {
   DOMselectors.name.value ="";
 }
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-  </div>
-`
-
-setupCounter(document.querySelector('#counter'))
-
-
-
-let deck = []
-async function getData() {
-  let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=3");
-    let data = await res.json();
-
-  data.cards.forEach((card)=> deck.push(card))
-}
-getData();
-console.log(deck)
 
 //shuffle out three cards, show user cards, flip and shuffle them, have user pick the "any number shown" with cards face down
 
+function addcard(card) {
+  document.querySelector(".container").insertAdjacentHTML("afterbegin",
+    `<div class="card">
+      
+      <img src=${card.image} alt="">
+      </div>`)
+}
 
 
 
-
-function greet(name){
+/* function greet(name){
   const greetPromise = new Promise(function(resolve, reject){
       resolve(`Hello ${name}`);
   });
@@ -74,4 +43,19 @@ const Aaron = greet("aaron");
 console.log(Aaron);
 Aaron.then((result)=>{
   console.log(result);
-}); 
+});  */
+
+async function init(){
+  let deck = []
+  async function getData() {
+    let res = await fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=3");
+      let data = await res.json();
+      console.log(data)
+  
+    data.cards.forEach((card)=> deck.push(card))
+  }
+  await getData();
+ deck.forEach((card)=> addcard(card))
+}
+
+init()
