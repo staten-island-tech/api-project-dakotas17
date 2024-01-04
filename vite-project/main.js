@@ -8,18 +8,6 @@ const DOMselectors = {
   name: document.querySelector(".name"),
   h1s: document.querySelectorAll("h1"),
 };
-/* 
-DOMselectors.form.addEventListener("submit", function(event){
-  event.preventDefault();
-  console.log(DOMselectors.name.value);
-  DOMselectors.h1s.forEach((el)=> el.textContent = DOMselectors.name.value)
- */
-
-
-function clearfields() {
-  DOMselectors.name.value ="";
-}
-
 
 //shuffle out three cards, show user cards, flip and shuffle them, have user pick the "any number shown" with cards face down
 
@@ -56,6 +44,23 @@ async function init(){
   }
   await getData();
  deck.forEach((card)=> addcard(card))
+ await flip();
 }
 
 init()
+
+//on click change value of image to "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
+//prompt user to pick value of card
+//on users pick return original card image and add win or lose message
+
+
+function flip() {
+//card.img.value = "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
+document.querySelectorAll(card.image).forEach((button) => {
+  console.log(button)
+button.addEventListener("click", function(event){
+  console.log(event.target)
+}
+);
+});
+}
