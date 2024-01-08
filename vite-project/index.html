@@ -7,16 +7,31 @@
     <title>Vite App</title>
     <link rel="stylesheet" href="style.css">
   </head>
+   <script>
+    function pictureChange(){
+      document.getElementById('myimage').src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
+    }
+    function changeBack(){
+      document.getElementById('myimage').src="https://deckofcardsapi.com/api/deck/new/draw/?count=1"
+    }
+    
+  </script> >
   <body= light>
+
+  
    <!--  <form action="" id="form">
       <label for="name">Enter Name</label>
       <input type="text" name="name" class="name"/>
       <input type="submit" value="submit" id="submit"/>
     </form> -->
-    <input type="submit" value="Flip Cards" id="submit">
-    <button>Flip Cards</button>
+<div class="box"> <img id="myimage" src=''>
+  <img id="myimage" src=''>
+  <img id="myimage" src=''></div>
+     
+    <p><input type="button" id="theButton" value="swap" onclick="pictureChange()">
+    <input type="button" id="theButton2" value="swap back" onclick="changeBack()">
+    </p> 
 
-    
     <div id="app"></div>
     <h1></h1>
     <h2></h2>

@@ -21,6 +21,44 @@ function addcard(card) {
 
 
 
+
+
+/* const image = document.getElementById('myimage');
+const button = document.getElementById('mybutton');
+
+// Add a click event listener to the button
+button.addEventListener('click', function() {
+    // Swap the image src attribute
+    if (image.src.includes('myimage')) {
+        image.src = 'https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg'; // Replace with the second image path
+    } else {
+        image.src = 'myimage'; // Replace with the first image path
+    }
+}); */
+
+
+
+
+
+   /*  function pictureChange(){
+      document.getElementById('myimage').src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
+    }
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* function greet(name){
   const greetPromise = new Promise(function(resolve, reject){
       resolve(`Hello ${name}`);
@@ -45,6 +83,7 @@ async function init(){
   await getData();
  deck.forEach((card)=> addcard(card))
  await flip();
+ //pictureChange()
 }
 
 init()
@@ -54,7 +93,7 @@ init()
 //on users pick return original card image and add win or lose message
 
 
-function flip() {
+/* function flip() {
 //card.img.value = "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
 document.querySelectorAll(card.image).forEach((button) => {
   console.log(button)
@@ -64,16 +103,29 @@ button.addEventListener("click", function(event){
 );
 });
 }
-
+ */
 
 /* var img = document.getElementById("myimage");
 img.addEventListener("click", function(){
   if(button)
 }) */
 
-var img = document.getElementById("myImage");
+/* var img = document.getElementById("myImage");
 button.addEventListener("click", function(){
   if(card.img != "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"){
     card.img = "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg";}
   else{
-    img.src = "images/pic1.png";}});
+    card.img = ${};}}); */
+
+  /*   function flip(){
+      document.querySelectorAll(".remove").forEach((button) => {
+          console.log(button)
+          button.addEventListener("click", function(event){
+            console.log(event.target)
+
+          //event.target.parentElement.remove()
+          });
+      });
+  }
+
+   */
