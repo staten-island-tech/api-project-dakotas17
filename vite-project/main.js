@@ -7,6 +7,8 @@ const DOMselectors = {
   form: document.querySelector("#form"),
   name: document.querySelector(".name"),
   h1s: document.querySelectorAll("h1"),
+  button1: document.querySelector("#theButton"),
+  button2: document.querySelector("#theButton2"),
 };
 
 //shuffle out three cards, show user cards, flip and shuffle them, have user pick the "any number shown" with cards face down
@@ -15,10 +17,24 @@ function addcard(card) {
   document.querySelector(".container").insertAdjacentHTML("afterbegin",
     `<div class="card">
       
-      <img src=${card.image} alt="" id="myimage">
+      <img src=${card.image} alt="" class="myimage">
       </div>`)
 }
 
+
+function fwip(button){
+button.addEventListener("click", function(event){
+  event.preventDefault
+  document.querySelector(".container").insertAdjacentHTML("afterbegin",`
+  <div class="card">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
+ </div> <div class="card">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
+  </div> <div class="card">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage"> </div>`
+)})
+}
+console.log(fwip)
 
 
 
@@ -81,8 +97,8 @@ async function init(){
     data.cards.forEach((card)=> deck.push(card))
   }
   await getData();
- deck.forEach((card)=> addcard(card))
- await flip();
+ deck.forEach((card)=> addcard(card));
+ fwip(DOMselectors.button1);
  //pictureChange()
 }
 
