@@ -45,6 +45,25 @@ function fwipback(deck,button){
     })
   }
 
+function shuffle(array){
+  for (var i = array.length - 1; i > 0; i--){
+    var j = Math.floor
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,19 +104,6 @@ button.addEventListener('click', function() {
       document.getElementById('myimage').src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
     }
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* function greet(name){
