@@ -25,6 +25,7 @@ function addcard(card) {
 function fwip(button){
 button.addEventListener("click", function(event){
   event.preventDefault
+  document.querySelector(".container").innerHTML = ""
   document.querySelector(".container").insertAdjacentHTML("afterbegin",`
   <div class="card">
   <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
@@ -36,7 +37,31 @@ button.addEventListener("click", function(event){
 }
 console.log(fwip)
 
+function fwipback(deck,button){
+  button.addEventListener("click", function(event){
+    event.preventDefault
+    document.querySelector(".container").innerHTML = ""
+    deck.forEach((card)=> addcard(card));
+    })
+  }
 
+
+
+
+
+/* function fwipback(button){
+  button.addEventListener("click", function(event){
+    event.preventDefault
+    document.querySelector(".container").insertAdjacentHTML("afterbegin",`
+    <div class="card">
+    <img src="">
+   </div> <div class="card">
+    <img src="">
+    </div> <div class="card">
+    <img src=""> </div>`
+  )})
+  }
+  console.log(fwipback) */
 
 
 /* const image = document.getElementById('myimage');
@@ -99,6 +124,10 @@ async function init(){
   await getData();
  deck.forEach((card)=> addcard(card));
  fwip(DOMselectors.button1);
+ //shuffle deck
+ //ask user to pick1
+ //flip back
+ fwipback(deck,DOMselectors.button2);
  //pictureChange()
 }
 
