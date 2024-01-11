@@ -32,8 +32,9 @@ button.addEventListener("click", function(event){
  </div> <div class="card">
   <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
   </div> <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage"> </div>`
-)})
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage"> </div>`,
+  alert("pick the highest card")
+  )})
 }
 console.log(fwip)
 
@@ -47,76 +48,14 @@ function fwipback(deck,button){
 
 function shuffle(array){
   for (var i = array.length - 1; i > 0; i--){
-    var j = Math.floor
+    var j = Math.floor(Math.random() * (i+1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j]= temp;
   }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* function fwipback(button){
-  button.addEventListener("click", function(event){
-    event.preventDefault
-    document.querySelector(".container").insertAdjacentHTML("afterbegin",`
-    <div class="card">
-    <img src="">
-   </div> <div class="card">
-    <img src="">
-    </div> <div class="card">
-    <img src=""> </div>`
-  )})
-  }
-  console.log(fwipback) */
-
-
-/* const image = document.getElementById('myimage');
-const button = document.getElementById('mybutton');
-
-// Add a click event listener to the button
-button.addEventListener('click', function() {
-    // Swap the image src attribute
-    if (image.src.includes('myimage')) {
-        image.src = 'https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg'; // Replace with the second image path
-    } else {
-        image.src = 'myimage'; // Replace with the first image path
-    }
-}); */
-
-
-
-
-
-   /*  function pictureChange(){
-      document.getElementById('myimage').src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
-    }
- */
-
-
-/* function greet(name){
-  const greetPromise = new Promise(function(resolve, reject){
-      resolve(`Hello ${name}`);
-  });
-  return greetPromise;
-}
-const Aaron = greet("aaron");
-console.log(Aaron);
-Aaron.then((result)=>{
-  console.log(result);
-});  */
 
 async function init(){
   let deck = []
@@ -130,11 +69,8 @@ async function init(){
   await getData();
  deck.forEach((card)=> addcard(card));
  fwip(DOMselectors.button1);
- //shuffle deck
- //ask user to pick1
- //flip back
- fwipback(deck,DOMselectors.button2);
- //pictureChange()
+ shuffle(deck)
+ fwipback(deck,DOMselectors.button2); //use on click to make cards flip after clicking card instead of button
 }
 
 init()
