@@ -17,7 +17,7 @@ function addcard(card) {
   document.querySelector(".container").insertAdjacentHTML("afterbegin",
     `<div class="card">
       
-      <img src=${card.image} alt="" class="myimage">
+      <img src=${card.image} alt="face" class="myimage">
       </div>`)
 }
 
@@ -29,11 +29,11 @@ button.addEventListener("click", function(event){
   document.querySelector(".container").innerHTML = ""
   document.querySelector(".container").insertAdjacentHTML("afterbegin",`
   <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="back" class="myimage" id="myimage">
  </div> <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="back" class="myimage" id="myimage">
   </div> <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage""> </div>`,
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="back" class="myimage" id="myimage""> </div>`,
   alert("pick the highest card")
   )})
 }
@@ -76,3 +76,5 @@ async function init(){
 }
 
 init()
+
+//add alt text to images
