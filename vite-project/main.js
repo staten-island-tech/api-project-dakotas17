@@ -22,17 +22,18 @@ function addcard(card) {
 }
 
 
+
 function fwip(button){
 button.addEventListener("click", function(event){
   event.preventDefault
   document.querySelector(".container").innerHTML = ""
   document.querySelector(".container").insertAdjacentHTML("afterbegin",`
   <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage">
  </div> <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage">
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage">
   </div> <div class="card">
-  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage"> </div>`,
+  <img src="https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg" alt="erm" class="myimage" id="myimage""> </div>`,
   alert("pick the highest card")
   )})
 }
@@ -56,7 +57,6 @@ function shuffle(array){
 }
 
 
-
 async function init(){
   let deck = []
   async function getData() {
@@ -69,50 +69,10 @@ async function init(){
   await getData();
  deck.forEach((card)=> addcard(card));
  fwip(DOMselectors.button1);
- shuffle(deck)
- fwipback(deck,DOMselectors.button2); //use on click to make cards flip after clicking card instead of button
+ shuffle(deck);
+ fwipback(deck,DOMselectors.button2);
+
+ //use onclick to make cards flip after clicking card instead of button
 }
 
 init()
-
-//on click change value of image to "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
-//prompt user to pick value of card
-//on users pick return original card image and add win or lose message
-
-
-/* function flip() {
-//card.img.value = "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"
-document.querySelectorAll(card.image).forEach((button) => {
-  console.log(button)
-button.addEventListener("click", function(event){
-  console.log(event.target)
-}
-);
-});
-}
- */
-
-/* var img = document.getElementById("myimage");
-img.addEventListener("click", function(){
-  if(button)
-}) */
-
-/* var img = document.getElementById("myImage");
-button.addEventListener("click", function(){
-  if(card.img != "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg"){
-    card.img = "https://images.squarespace-cdn.com/content/v1/56ba85d9cf80a17a6f304b72/17021f49-d2e2-449f-a7c4-5d0ce8e08b7b/Card-Back.jpg";}
-  else{
-    card.img = ${};}}); */
-
-  /*   function flip(){
-      document.querySelectorAll(".remove").forEach((button) => {
-          console.log(button)
-          button.addEventListener("click", function(event){
-            console.log(event.target)
-
-          //event.target.parentElement.remove()
-          });
-      });
-  }
-
-   */
